@@ -4,7 +4,6 @@ $(document).ready(function () {
         promptLabel: "Simplify> ",
         commandValidate: function () { return true; },
         commandHandle: function (line) {
-            console.log(line);
             return simplify_string(line);
         },
         autofocus:true,

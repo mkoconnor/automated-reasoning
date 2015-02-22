@@ -119,7 +119,9 @@ module Lexing = struct
 end
 
 let simplify : string -> string = fun s ->
-  Lexing.string_of_exp 0 (Expression.simplify (Lexing.default_parser s))
+  try
+    Lexing.string_of_exp 0 (Expression.simplify (Lexing.default_parser s))
+  with e -> Printexc.to_string e
 
 
 let () =
