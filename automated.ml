@@ -21,7 +21,9 @@ module Expression = struct
     let simplify1 t =
       match t with
       | Add (Const n, Const m) -> Const (n + m)
+      | Add (Const n, Add (Const m, x)) -> Add (Const (n + m), x)
       | Mul (Const n, Const m) -> Const (n * m)
+      | Mul (Const n, Mul (Const m, x)) -> Mul (Const (n * m), x)
       | Add (Const 0, x)
       | Add (x, Const 0) -> x
       | Mul (Const 0, _)
