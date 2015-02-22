@@ -4,13 +4,37 @@
     <title>Simplification</title>
     <script type="text/javascript"
             src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="jquery.console.js"></script>
     <script type="text/javascript" src="automated.js"></script>
     <script type="text/javascript" src="script.js"></script>
+
+    <style>
+      div.console { font-size: 14px }
+div.console div.jquery-console-inner
+ { width:900px; height:200px; background:#333; padding:0.5em;
+   overflow:auto }
+div.console div.jquery-console-prompt-box
+ { color:#fff; font-family:monospace; }
+div.console div.jquery-console-focus span.jquery-console-cursor
+ { background:#fefefe; color:#333; font-weight:bold }
+div.console div.jquery-console-message-error
+ { color:#ef0505; font-family:sans-serif; font-weight:bold;
+   padding:0.1em; }
+div.console div.jquery-console-message-success
+ { color:white; font-family:sans-serif; font-weight:bold;
+   padding:0.1em; }
+div.console div.jquery-console-message-value
+ { color:#1ad027; font-family:monospace;
+   padding:0.1em; }
+div.console div.jquery-console-message-type
+ { color:#52666f; font-family:monospace;
+   padding:0.1em; }
+      div.console span.jquery-console-prompt-label { font-weight:bold }
+      </style>
   </head>
   <body>
         <h1>Hey there</h1>
 
-        <p>Type an expression here: <input id="input"/> and press
-        enter to simplify.  Result: <span id="output"></span>.</p>
+        <div class="console"></div>
   </body>
 </html>
